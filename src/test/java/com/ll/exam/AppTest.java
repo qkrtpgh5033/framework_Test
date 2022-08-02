@@ -1,6 +1,7 @@
 package com.ll.exam;
 
 import com.ll.exam.article.controller.ArticleController;
+import com.ll.exam.home.controller.HomeController;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -22,11 +23,25 @@ class AppTest {
     }
 
     @Test
+    public void ioc_homeController(){
+        HomeController homeController = Container.getHomeController();
+
+        assertThat(homeController).isNotNull();
+    }
+
+    @Test
     public void ioc__articleController__싱글톤() {
         ArticleController articleController1 = Container.getArticleController();
         ArticleController articleController2 = Container.getArticleController();
         // 실행, 기대
         assertThat(articleController2).isEqualTo(articleController1);
+    }
+    @Test
+    public void ioc_homeController__싱글톤() {
+        HomeController homeController1 = Container.getHomeController();
+        HomeController homeController2 = Container.getHomeController();
+        // 실행, 기대
+        assertThat(homeController2).isEqualTo(homeController1);
     }
 
     @Test

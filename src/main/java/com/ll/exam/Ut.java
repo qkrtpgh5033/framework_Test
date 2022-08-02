@@ -1,6 +1,29 @@
 package com.ll.exam;
 
+import com.ll.exam.article.controller.ArticleController;
+
+import java.lang.reflect.InvocationTargetException;
+
 public class Ut {
+
+    public static class cls {
+
+        public static <T>T newObj(Class<T> cls, T defaultValue) {
+
+            try {
+                return cls.getDeclaredConstructor().newInstance();
+
+            } catch (InstantiationException e) {
+                return null;
+            } catch (IllegalAccessException e) {
+                return null;
+            } catch (InvocationTargetException e) {
+                return null;
+            } catch (NoSuchMethodException e) {
+                return null;
+            }
+        }
+    }
     public static class str{
 
         public static String de(String name) {

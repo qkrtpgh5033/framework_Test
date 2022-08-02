@@ -13,4 +13,9 @@ public class ArticleController {
     public ArticleController() {
 
     }
+
+    public ArticleController(String s){
+
+
+    }
 }
