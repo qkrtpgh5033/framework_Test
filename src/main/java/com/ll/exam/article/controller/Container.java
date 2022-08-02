@@ -1,7 +1,7 @@
 package com.ll.exam.article.controller;
 
 public class Container {
-    static ArticleController articleController = new ArticleController();
+    private static final ArticleController articleController = new ArticleController();
     public static ArticleController getArticleController() {
         return articleController;
     }
