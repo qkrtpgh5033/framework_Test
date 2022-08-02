@@ -2,6 +2,7 @@ package com.ll.exam;
 
 import com.ll.exam.annotation.Controller;
 import com.ll.exam.annotation.GetMapping;
+import com.ll.exam.annotation.Service;
 import com.ll.exam.article.controller.ArticleController;
 import com.ll.exam.home.controller.HomeController;
 import org.reflections.Reflections;
@@ -24,6 +25,11 @@ public class Container {
         for (Class<?> cls : ref.getTypesAnnotatedWith(Controller.class)) {
             objects.put(cls, Ut.cls.newObj(cls, null));
         }
+
+        for (Class<?> cls : ref.getTypesAnnotatedWith(Service.class)) {
+            objects.put(cls, Ut.cls.newObj(cls, null));
+        }
+
 
 
     }
